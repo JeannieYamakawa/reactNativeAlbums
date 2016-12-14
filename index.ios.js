@@ -4,17 +4,18 @@
 import React from 'react';
 import { Text, AppRegistry } from 'react-native';
 //****import header
-import Header from './src/components/header'
+import Header from './src/components/header';
 
 //**********Create a component
 const App = () => {
     return (
         //this is a dialiect of javascript called JSX. only way to communicate with react native what we want to render.
         //self closing tag below
-        <Header />
+        //property of headerText could be called anything. it's a variable being passed to header as an argument
+        <Header headerText={'Albums'} />
     );
 };
 
 //**********Render it to the device
 //this line says "hey react native, you're about to render an app called albums"
-AppRegistry.registerComponent('albums', () => App)
+AppRegistry.registerComponent('albums', () => App);
