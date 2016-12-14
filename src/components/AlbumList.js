@@ -1,7 +1,8 @@
 // tricking react into importing the whole react library so that Babel can still compile into javascript but also the component from the react library so we can extend it instead of only using fat arrow functional components
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
     //1.initialize the state of the albumlist component when it's first rendered. the word state is associated with the Component built in react class, available to class based components ONLY. we can then use methods like setState on it.
@@ -15,7 +16,9 @@ class AlbumList extends Component {
 
     renderAlbums() {
         return this.state.albums.map(album =>
-            <Text key={album.title}>{album.title}</Text>);
+            //line below is creating a prop to pass to albumDetail child component by writing 'album={album}'...the secont album in curly braces is from the map. name of property is arbitrary
+            <AlbumDetail key={album.title} album={album}/>
+        );
         }
 
     render() {
