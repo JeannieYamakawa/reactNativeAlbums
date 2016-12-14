@@ -3,13 +3,15 @@
 //import word is part of ES6.
 import React from 'react';
 import { Text, AppRegistry } from 'react-native';
-
+//****import header
+import Header from './src/components/header'
 
 //**********Create a component
 const App = () => {
     return (
         //this is a dialiect of javascript called JSX. only way to communicate with react native what we want to render.
-        <Text>Some Text</Text>
+        //self closing tag below
+        <Header />
     );
 };
 
