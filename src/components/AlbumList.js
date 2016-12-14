@@ -13,11 +13,16 @@ class AlbumList extends Component {
              this.setState({ albums: response.data }));
     }
 
+    renderAlbums() {
+        return this.state.albums.map(album =>
+            <Text key={album.title}>{album.title}</Text>);
+        }
+
     render() {
         // console.log(this.state);  this log renders twice, first an empty array, then an array with the data from http request
         return (
             <View>
-                <Text>Album List!!!!</Text>
+                {this.renderAlbums()}
             </View>
         );
     }
